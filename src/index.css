@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Color Palette - Soft Light Neumorphic Theme */
+  --bg-color-1: #f4f6f9;
+  --bg-color-2: #f4f6f9;
+  --bg-color-3: #f4f6f9;
+  --text-primary: #111827; /* Darker text for headings */
+  --text-secondary: #6b7280; /* Gray text for paragraphs */
+  --accent: #ff758c; /* Pinkish red */
+  --accent-secondary: #66a6ff; /* Soft blue */
+  
+  /* Glassmorphism Variables */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 1);
+  --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Very soft shadow like image */
+  
+  --font-main: 'Outfit', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-color-1);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px; /* More rounded corners like image */
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.glass-button {
+  background: linear-gradient(135deg, #ff8a9a 0%, #ffb6b9 100%); /* Match the button color in image */
+  border: none;
+  color: #ffffff; /* White text for button */
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 138, 154, 0.3);
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.glass-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(255, 138, 154, 0.4);
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+  section {
+    padding: 3.5rem 0;
+  }
+}
+
+/* Blur Blobs for Neumorphic Look */
+.blur-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.blob-pink { background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%); }
+.blob-blue { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.blob-yellow { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); }
+.blob-green { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
