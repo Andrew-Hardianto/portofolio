@@ -4,7 +4,7 @@ import './Experience.css';
 const Experience = () => {
   const experiences = [
     {
-      role: "Front End Developer (Mobile & Web)",
+      role: "Front End Developer & Mobile Developer",
       company: "PT Gema Inovasi Teknologi",
       duration: "Nov 2021 – Present",
       description: "Developed and maintained 5+ web and mobile applications using Angular, TypeScript, Ionic, React Native, and Flutter. Implemented UI based on business designs, integrated REST APIs, and optimized performance to improve application stability and user experience."
