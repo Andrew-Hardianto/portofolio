@@ -12,8 +12,9 @@ const Contact = () => {
             I'll try my best to get back to you!
           </p>
           <div className="contact-info">
-            <p className="info-item"><strong>Location:</strong> Bekasi, West Java</p>
-            {/* <p className="info-item"><strong>Phone:</strong> +62 857-7879-9301</p> */}
+            <p className="info-item"><strong>Location:</strong> Bekasi, West Java (open to Jakarta hybrid/WFO & remote)</p>
+            <p className="info-item"><strong>Phone:</strong> +62 857-7879-9301</p>
+            <p className="info-item"><strong>Website:</strong> <a href="https://andrewhardianto.my.id" target="_blank" rel="noopener noreferrer">andrewhardianto.my.id</a></p>
           </div>
 
           <div className="social-links">

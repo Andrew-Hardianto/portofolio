@@ -7,33 +7,33 @@ const Projects = () => {
   const projects = [
     {
       title: "Starconnect & Starconnect Lite",
-      category: "Mobile Developer",
-      description: "HRIS Mobile Product. Developed and maintained HRIS mobile applications with a focus on application stability and user experience.",
-      tech: ["Mobile App", "Dart", "Flutter", "Ionic", "Angular", "REST API", "UI Implementation"]
+      category: "HRIS Mobile Product",
+      description: "Delivered a full mobile architecture overhaul; resolved cross-platform rendering bugs and optimized large-asset loading.",
+      tech: ["Flutter", "Dart", "Angular", "Ionic"]
     },
     {
-      title: "Assist Now",
-      category: "Mobile Developer",
-      description: "Developed a custom internal chat application based on Rocket.Chat for Android and iOS devices.",
-      tech: ["Mobile App", "React Native", "Rocket.Chat", "Android", "iOS"]
+      title: "AssistNow",
+      category: "Internal Secure Messaging",
+      description: "Real-time secure messaging with live communication and user-presence tracking for enterprise use.",
+      tech: ["React Native", "TypeScript", "WebSocket"]
     },
     {
-      title: "Smile Apps",
-      category: "Front-End / Mobile Developer",
-      description: "Client: Adira Finance. Developed a Web and Mobile Superapp for internal corporate applications, including UI implementation and feature integration based on business requirements.",
-      tech: ["Web", "Mobile App", "REST API", "UI Implementation", "Ionic", "Angular"]
+      title: "Adira Finance Internal Superapp",
+      category: "Finance Operational Tool",
+      description: "Unified 4+ operational tools for internal finance staff; integrated secure REST APIs and data-visualization modules for complex fintech workflows.",
+      tech: ["Angular", "Ionic", "Capacitor", "TypeScript"]
     },
     {
-      title: "HC Eazy",
-      category: "Front-End / Mobile Developer",
-      description: "Clients: Mandiri Tunas Finance. Developed an internal PWA web application and Android HRIS application, implemented UI, and integrated application services in accordance with corporate standards.",
-      tech: ["Web", "Mobile App", "REST API", "UI Implementation", "Ionic", "Angular"]
+      title: "HRIS Web & Mobile (MTF & ACC)",
+      category: "Enterprise HRIS",
+      description: "Front-end architecture used by 1,000+ corporate staff, cutting manual HR administration and process cycle time for Mandiri Tunas Finance and ACC.",
+      tech: ["Angular", "Ionic", "React Native", "Capacitor"]
     },
     {
-      title: "Banana",
-      category: "Front-End / Mobile Developer",
-      description: "Client: Astra Credit Company. Developed an internal PWA web application and Android HRIS application, implemented UI, and integrated application services in accordance with corporate standards.",
-      tech: ["Web", "Mobile App", "REST API", "UI Implementation", "Ionic", "Angular"]
+      title: "QrQu",
+      category: "Personal Project",
+      description: "Native Android QR scanner that reads codes from camera or gallery and keeps a local scan history. Code: github.com/Andrew-Hardianto/QrQu",
+      tech: ["Kotlin", "Jetpack Compose", "Room", "ML Kit"]
     }
   ];
 
@@ -70,7 +70,7 @@ const Projects = () => {
             <p>{selectedProject.description}</p>
             <div className="tech-stack">
               {selectedProject.tech.map((tech, i) => (
-                <span key={i} className="tech-badge glass-panel" style={{background: 'rgba(0,0,0,0.05)', color: '#111827'}}>{tech}</span>
+                <span key={i} className="tech-badge glass-panel" style={{ background: 'rgba(0,0,0,0.05)', color: '#111827' }}>{tech}</span>
               ))}
             </div>
           </div>
