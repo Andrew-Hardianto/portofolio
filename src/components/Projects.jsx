@@ -34,6 +34,12 @@ const Projects = () => {
       category: "Personal Project",
       description: "Native Android QR scanner that reads codes from camera or gallery and keeps a local scan history. Code: github.com/Andrew-Hardianto/QrQu",
       tech: ["Kotlin", "Jetpack Compose", "Room", "ML Kit"]
+    },
+    {
+      title: "BPO Payroll",
+      category: "Enterprise Web App",
+      description: "Developed a comprehensive payroll management system for Business Process Outsourcing (BPO), streamlining salary calculations and administrative workflows.",
+      tech: ["Angular", "Bootstrap"]
     }
   ];
 
