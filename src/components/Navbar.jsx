@@ -6,7 +6,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -14,14 +14,14 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled glass-panel' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-content">
-        <a href="#" className="logo">AH.</a>
+        <a href="#" className="logo">Andrew Hardianto.</a>
         <ul className="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact" className="glass-button nav-btn">Let's Talk</a></li>
+          <li><a href="#contact" className="editorial-btn">Let's Talk</a></li>
         </ul>
       </div>
     </nav>

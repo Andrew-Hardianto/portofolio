@@ -35,12 +35,13 @@ const Experience = () => {
         <h2 className="section-title">My Experience</h2>
         <div className="timeline">
           {experiences.map((exp, index) => (
-            <div key={index} className="timeline-item glass-card">
-              <div className="timeline-dot"></div>
+            <div key={index} className="timeline-item">
+              <div className="timeline-meta">
+                <span className="duration">{exp.duration}</span>
+              </div>
               <div className="timeline-content">
                 <h3>{exp.role}</h3>
-                <h4 className="highlight">{exp.company}</h4>
-                <span className="duration">{exp.duration}</span>
+                <h4>{exp.company}</h4>
                 <p>{exp.description}</p>
               </div>
             </div>

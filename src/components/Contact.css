@@ -1,61 +1,93 @@
-.contact-card {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 4rem;
-  text-align: center;
+.contact-footer {
+  background-color: var(--bg-secondary);
+  padding: 6rem 0 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid var(--border-light);
 }
 
-.contact-card h2 {
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 6rem;
+}
+
+.contact-header h2 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
 }
 
-.contact-card p {
-  color: var(--text-secondary);
-  margin-bottom: 3rem;
-  font-size: 1.1rem;
+.contact-header p {
+  font-size: 1.15rem;
+  line-height: 1.7;
 }
 
-.contact-info {
+.contact-details {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+  gap: 2.5rem;
 }
 
-.info-item {
-  font-size: 1.1rem;
+.info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--text-secondary);
 }
 
-.info-item strong {
+.info-value {
+  font-size: 1rem;
   color: var(--text-primary);
-  margin-right: 0.5rem;
+  line-height: 1.5;
 }
 
 .social-links {
   display: flex;
-  justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
 
-.social-btn {
-  padding: 0.5rem 1.5rem;
+.social-links a {
+  font-family: var(--font-sans);
   font-weight: 500;
-  border-radius: 20px;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 2px;
 }
 
-.social-btn:hover {
-  background: rgba(139, 92, 246, 0.2);
-  border-color: rgba(139, 92, 246, 0.5);
+.social-links a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  opacity: 1;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (max-width: 768px) {
-  .contact-card {
-    padding: 2rem;
+  .contact-footer {
+    padding: 4rem 0 2rem;
   }
-  .contact-card h2 {
+  
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+  
+  .contact-header h2 {
     font-size: 2rem;
   }
 }

@@ -9,7 +9,7 @@ const Projects = () => {
       title: "Starconnect & Starconnect Lite",
       category: "HRIS Mobile Product",
       description: "Delivered a full mobile architecture overhaul; resolved cross-platform rendering bugs and optimized large-asset loading.",
-      tech: ["Flutter", "Dart", "Angular", "Ionic"]
+      tech: ["Flutter", "Provider", "Dart", "Angular", "Ionic", "Capacitor"]
     },
     {
       title: "AssistNow",
@@ -27,13 +27,13 @@ const Projects = () => {
       title: "HRIS Web & Mobile (MTF & ACC)",
       category: "Enterprise HRIS",
       description: "Front-end architecture used by 1,000+ corporate staff, cutting manual HR administration and process cycle time for Mandiri Tunas Finance and ACC.",
-      tech: ["Angular", "Ionic", "React Native", "Capacitor"]
+      tech: ["Angular", "Ionic", "Capacitor"]
     },
     {
       title: "QrQu",
       category: "Personal Project",
       description: "Native Android QR scanner that reads codes from camera or gallery and keeps a local scan history. Code: github.com/Andrew-Hardianto/QrQu",
-      tech: ["Kotlin", "Jetpack Compose", "Room", "ML Kit"]
+      tech: ["Kotlin", "Jetpack Compose", "ML Kit"]
     },
     {
       title: "BPO Payroll",
@@ -49,18 +49,18 @@ const Projects = () => {
         <h2 className="section-title">Featured Projects</h2>
         <div className="projects-grid">
           {projects.map((project, index) => (
-            <div key={index} className="project-card glass-card">
+            <div key={index} className="project-card">
               <div className="project-content">
                 <span className="project-category">{project.category}</span>
                 <h3>{project.title}</h3>
                 <p>{project.description.substring(0, 80)}...</p>
                 <div className="tech-stack">
                   {project.tech.slice(0, 3).map((tech, i) => (
-                    <span key={i} className="tech-badge glass-panel">{tech}</span>
+                    <span key={i} className="tech-badge">{tech}</span>
                   ))}
-                  {project.tech.length > 3 && <span className="tech-badge glass-panel">+{project.tech.length - 3}</span>}
+                  {project.tech.length > 3 && <span className="tech-badge">+{project.tech.length - 3}</span>}
                 </div>
-                <a href="#!" className="view-project" onClick={(e) => { e.preventDefault(); setSelectedProject(project); }}>View Details →</a>
+                <a href="#!" className="view-project" onClick={(e) => { e.preventDefault(); setSelectedProject(project); }}>Read more</a>
               </div>
             </div>
           ))}
@@ -76,7 +76,7 @@ const Projects = () => {
             <p>{selectedProject.description}</p>
             <div className="tech-stack">
               {selectedProject.tech.map((tech, i) => (
-                <span key={i} className="tech-badge glass-panel" style={{ background: 'rgba(0,0,0,0.05)', color: '#111827' }}>{tech}</span>
+                <span key={i} className="tech-badge">{tech}</span>
               ))}
             </div>
           </div>

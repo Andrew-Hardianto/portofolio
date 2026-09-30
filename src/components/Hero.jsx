@@ -4,16 +4,20 @@ import './Hero.css';
 const Hero = () => {
   return (
     <section id="about" className="hero">
-      <div className="container hero-content">
-        <div className="hero-text glass-card">
-          <h1>Hi, I'm <span className="highlight">Andrew Hardianto</span>.</h1>
-          <h2>Mobile & Front-End Developer</h2>
-          <p>
-            Mobile & Front-End Developer with 4+ years building cross-platform applications for multifinance and banking clients (Adira Finance, Mandiri Tunas Finance, Astra Credit Company). Reduced crash rate by 80% and load time by 40% across enterprise apps used by 1,000+ staff, and built offline-first architecture for field operations. Experienced in Flutter, React Native, and Angular/Ionic, with hands-on squad leadership in Agile teams. Open to Jakarta hybrid/WFO and remote roles.
-          </p>
+      <div className="container">
+        <div className="hero-content">
+          <h1 className="hero-title">Engineering elegant, human-centric software.</h1>
+          <div className="hero-description">
+            <p>
+              I am a Mobile & Front-End Developer with over four years of experience crafting enterprise-grade applications. I specialize in building <span className="inline-accent">cross-platform solutions</span> using Flutter, React Native, and Angular, focusing on stability, performance, and offline-first architectures.
+            </p>
+            <p>
+              Whether it's reducing crash rates or optimizing load times, my goal is always to deliver software that feels seamless and intuitive. Currently open to hybrid or remote roles in Jakarta.
+            </p>
+          </div>
           <div className="hero-actions">
-            <a href="#projects" className="glass-button">View My Work</a>
-            <a href="#experience" className="glass-button outline">Experience</a>
+            <a href="#projects" className="editorial-btn">View Selected Work</a>
+            <a href="#experience" className="editorial-btn-outline">Read Experience</a>
           </div>
         </div>
       </div>

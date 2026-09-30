@@ -1,85 +1,61 @@
 .experience {
   position: relative;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  text-align: center;
-  letter-spacing: -1px;
+  border-top: 1px solid var(--border-light);
 }
 
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* Timeline line */
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 20px;
-  height: 100%;
-  width: 2px;
-  background: var(--glass-border);
+  gap: 3rem;
+  margin-top: 3rem;
 }
 
 .timeline-item {
-  position: relative;
-  padding: 2rem;
-  margin-left: 50px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  align-items: baseline;
 }
 
-.timeline-dot {
-  position: absolute;
-  left: -39px;
-  top: 2.5rem;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
-}
-
-.timeline-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.timeline-content h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+.timeline-meta {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
 }
 
 .duration {
   display: inline-block;
   color: var(--text-secondary);
-  font-size: 0.9rem;
+}
+
+.timeline-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+  color: var(--text-primary);
+}
+
+.timeline-content h4 {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--accent);
   margin-bottom: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 0.2rem 0.8rem;
-  border-radius: 20px;
 }
 
 .timeline-content p {
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1.05rem;
 }
 
 @media (max-width: 768px) {
-  .timeline::before {
-    left: 10px;
-  }
   .timeline-item {
-    margin-left: 30px;
-    padding: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
-  .timeline-dot {
-    left: -27px;
+  
+  .timeline-meta {
+    margin-bottom: 0.5rem;
   }
 }
