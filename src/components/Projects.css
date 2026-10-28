@@ -12,11 +12,14 @@
   border: 1px solid var(--border-light);
   background: var(--bg-primary);
   border-radius: 4px;
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.3s var(--ease-out), box-shadow 0.3s ease;
 }
 
 .project-card:hover {
   border-color: var(--accent);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
 }
 
 .project-content {
@@ -24,6 +27,27 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+}
+
+.project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-index {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.75rem;
+  color: var(--border-light);
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-index {
+  color: var(--accent);
 }
 
 .project-category {
@@ -35,8 +59,7 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 1rem;
-  align-self: flex-start;
+  white-space: nowrap;
 }
 
 .project-card h3 {
@@ -74,11 +97,21 @@
   font-weight: 500;
   font-size: 0.9rem;
   color: var(--accent);
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   margin-top: auto;
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
   align-self: flex-start;
+}
+
+.view-project .arrow {
+  transition: transform 0.25s var(--ease-out);
+}
+
+.view-project:hover .arrow {
+  transform: translateX(4px);
 }
 
 .view-project:hover {
@@ -159,6 +192,17 @@
   font-size: 1.05rem;
 }
 
+.modal-content .modal-hint {
+  margin-bottom: 0;
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.modal-content .tech-stack {
+  margin-bottom: 0;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -167,9 +211,4 @@
 @keyframes slideUpModal {
   from { transform: translateY(20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
-}
-
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
 }

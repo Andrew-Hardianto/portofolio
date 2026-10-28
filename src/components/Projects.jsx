@@ -1,8 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Projects.css';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') setSelectedProject(null);
+    };
+
+    if (selectedProject) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = '';
+    };
+  }, [selectedProject]);
 
   const projects = [
     {
@@ -46,12 +62,20 @@ const Projects = () => {
   return (
     <section id="projects" className="projects">
       <div className="container">
+        <span className="section-eyebrow">03 — Selected Work</span>
         <h2 className="section-title">Featured Projects</h2>
         <div className="projects-grid">
           {projects.map((project, index) => (
-            <div key={index} className="project-card">
+            <div
+              key={index}
+              className="project-card reveal"
+              style={{ transitionDelay: `${(index % 3) * 0.1}s` }}
+            >
               <div className="project-content">
-                <span className="project-category">{project.category}</span>
+                <div className="project-top">
+                  <span className="project-index">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="project-category">{project.category}</span>
+                </div>
                 <h3>{project.title}</h3>
                 <p>{project.description.substring(0, 80)}...</p>
                 <div className="tech-stack">
@@ -60,7 +84,13 @@ const Projects = () => {
                   ))}
                   {project.tech.length > 3 && <span className="tech-badge">+{project.tech.length - 3}</span>}
                 </div>
-                <a href="#!" className="view-project" onClick={(e) => { e.preventDefault(); setSelectedProject(project); }}>Read more</a>
+                <a
+                  href="#!"
+                  className="view-project"
+                  onClick={(e) => { e.preventDefault(); setSelectedProject(project); }}
+                >
+                  Read more <span className="arrow" aria-hidden="true">→</span>
+                </a>
               </div>
             </div>
           ))}
@@ -69,8 +99,14 @@ const Projects = () => {
 
       {selectedProject && (
         <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-modal" onClick={() => setSelectedProject(null)}>&times;</button>
+          <div
+            className="modal-content"
+            role="dialog"
+            aria-modal="true"
+            aria-label={selectedProject.title}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="close-modal" onClick={() => setSelectedProject(null)} aria-label="Close dialog">&times;</button>
             <span className="project-category">{selectedProject.category}</span>
             <h3>{selectedProject.title}</h3>
             <p>{selectedProject.description}</p>
@@ -79,6 +115,7 @@ const Projects = () => {
                 <span key={i} className="tech-badge">{tech}</span>
               ))}
             </div>
+            <p className="modal-hint mono-text">Press ESC or click outside to close</p>
           </div>
         </div>
       )}
